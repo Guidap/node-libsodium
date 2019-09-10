@@ -5,6 +5,10 @@ ENV NODE_ENV=${ENVIRONMENT}
 
 WORKDIR /usr/src/app
 
+# Install docker
+RUN apk add --update docker openrc
+RUN rc-update add docker boot
+
 RUN npm install -g yarn
 
 # Needed for libsodium build
