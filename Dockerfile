@@ -5,7 +5,7 @@ ENV NODE_ENV=${ENVIRONMENT}
 
 WORKDIR /usr/src/app
 
-RUN npm install -g yarn
+RUN npm install -g yarn --force
 
 # Needed for libsodium build
 RUN apk add build-base python libtool autoconf automake
