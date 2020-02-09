@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 RUN apk add --update docker openrc
 RUN rc-update add docker boot
 
-RUN npm install -g yarn
+RUN npm install -g yarn --force
 
 # Needed for libsodium build
 RUN apk add build-base python libtool autoconf automake
