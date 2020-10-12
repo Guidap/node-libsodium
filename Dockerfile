@@ -1,7 +1,6 @@
-FROM node:10.19.0-alpine
+FROM node:12.19-alpine
 
-ARG ENVIRONMENT=development
-ENV NODE_ENV=${ENVIRONMENT}
+ENV NODE_ENV=production
 
 WORKDIR /usr/src/app
 
@@ -11,6 +10,3 @@ RUN rc-update add docker boot
 
 RUN npm install -g yarn --force
 
-# Needed for libsodium build
-RUN apk add build-base python libtool autoconf automake
-RUN npm install -g node-gyp
